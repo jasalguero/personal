@@ -38,6 +38,8 @@ define([], function () {
     	activateLinks();
     };
 
+
+    /** Scroll for links in the menu **/
     var activateLinks = function() {
     	$("header a").click(function(event){
          event.preventDefault();

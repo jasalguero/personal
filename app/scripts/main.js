@@ -1,8 +1,9 @@
 require.config({
     paths: {
         jquery: '../bower_components/jquery/jquery',
-        bootstrap: 'vendor/bootstrap'
+        'recaptcha': 'http://www.google.com/recaptcha/api/js/recaptcha_ajax'
     },
+    waitSeconds: 40,
     shim: {
         bootstrap: {
             deps: ['jquery'],
@@ -15,7 +16,7 @@ require.config({
     }
 });
 
-require(['app', 'jquery', 'scroller', 'header'], function (app, $, scroller, header) {
+require(['app', 'jquery', 'scroller', 'header', 'recaptcha', 'captcha_handler'], function (app, $, scroller, header, recaptcha, captcha_handler) {
     'use strict';
 
     console.log('Running jQuery %s', $().jquery);
@@ -25,6 +26,15 @@ require(['app', 'jquery', 'scroller', 'header'], function (app, $, scroller, hea
     header.init();
 
     new cbpScroller( document.getElementById( 'cbp-so-scroller' ) );
+
+    Recaptcha.create("6LdKl-QSAAAAANEmWQCYY9qUFQTOZjXBVaNfFTYu",
+        "recaptcha",
+        {
+            theme: "white"
+        }
+    );
+
+    $("#captchaSubmit").on('click', captcha_handler.verifyCaptcha);
 
     /** Scroll for links in the menu **/
     
