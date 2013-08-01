@@ -12,12 +12,10 @@ define([], function () {
      var scrollPage = function() {
         var sy = scrollY();
         if ( sy >= changeHeaderOn ) {
-            //classie.add( header, 'cbp-af-header-shrink' );
-            header.addClass('cbp-af-header-shrink')
+            header.addClass('cbp-af-header-shrink');
         }
         else {
-            //classie.remove( header, 'cbp-af-header-shrink' );
-             header.removeClass('cbp-af-header-shrink')
+             header.removeClass('cbp-af-header-shrink');
         }
         didScroll = false;
     };
@@ -55,7 +53,7 @@ define([], function () {
      });
     }
 
-    console.log ('Function: Header')
+    console.log ('Function: Header');
 
     return {
 	    init: init
