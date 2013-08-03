@@ -2,9 +2,14 @@
 define([], function () {
     'use strict';
 
-	var CAPTCHA_VERIFY_URL = 'scripts/verify.php';
+	var CAPTCHA_VERIFY_URL = 'http://jasalguero.com/scripts/verify.php';
+	var MAIL_SERVER_URL =  'http://jasalguero.com/scripts/sendMail.php';
 
-    'use strict';
+
+	/*********************************
+     *      FUNCTION DECLARATIONS
+     *********************************/
+
     var verifyCaptcha = function(){
 	    var postData = {
 	        'recaptcha_challenge_field': Recaptcha.get_challenge(),
@@ -21,8 +26,10 @@ define([], function () {
 	    jqxhr.done(function(data) {
 	        var json = JSON.parse(data);
 	        if (json.result === 'ok'){
-	            Recaptcha.destroy();
-	            $('#captchaContainer').remove();
+	            
+	            $('#captcha-container').hide(300, function(){
+	            	Recaptcha.destroy();
+	            });
 	            enableSubmitButton();
 	        }else{
 	            handleCaptchaFail(data);
@@ -37,10 +44,27 @@ define([], function () {
 	    $('#captchaSubmit').html('mmm, please try again!');
 	};
 
+    var sendMail = function(){
+        var postData = {
+            "posName": $('#contactName').val(),
+            "posText": $('#contactComment').val(),
+            "posEmail": $('#contactEmail').val()
+        };
+        var jqxhr = $.ajax({
+            url: MAIL_SERVER_URL,
+            type: 'post',
+            contentType: "application/x-www-form-urlencoded",
+            data: postData
+        });
+        jqxhr.done(function() { alert("Message sent! Thanks for contacting, I'll try to come back to you as soon as possible!"); })
+        jqxhr.fail(function() { alert("Ouch, there was an error sending the message, please try again or later :("); })
+    };
+
 	var enableSubmitButton = function(){
 	    var submitButton = $('#formSubmit');
 	    submitButton.removeClass('disabled');
 	    submitButton.removeAttr('disabled');
+	    submitButton.toggle();
 	    submitButton.on('click', function(event){
 	        sendMail();
 	        event.preventDefault();

@@ -21,21 +21,18 @@ require(['app', 'jquery', 'scroller', 'header', 'recaptcha', 'captcha_handler'],
 
     console.log('Running jQuery %s', $().jquery);
 
-
     /*** INIT STUFF ***/
     header.init();
 
-    new cbpScroller( document.getElementById( 'cbp-so-scroller' ) );
+    new cbpScroller(document.getElementById('cbp-so-scroller'));
 
-    Recaptcha.create("6LdKl-QSAAAAANEmWQCYY9qUFQTOZjXBVaNfFTYu",
-        "recaptcha",
-        {
-            theme: "white"
+    Recaptcha.create('6LdKl-QSAAAAANEmWQCYY9qUFQTOZjXBVaNfFTYu',
+        'recaptcha', {
+            theme: 'clean'
         }
     );
 
-    $("#captchaSubmit").on('click', captcha_handler.verifyCaptcha);
-
-    /** Scroll for links in the menu **/
     
+
+    $('#captchaSubmit').on('click', captcha_handler.verifyCaptcha);
 });

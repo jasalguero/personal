@@ -40,7 +40,7 @@
                 <div id="cbp-so-scroller" class="cbp-so-scroller">
                     <section class="cbp-so-section" id="about">
                         <article class="cbp-so-side cbp-so-side-left">
-                                <p>My name is Jose Antonio Salguero, born in Spain, but currently working and living in Berlin.</p>
+                                <p>My name is Jose Salguero, born in Sevilla (Spain), but currently working and living in Berlin.</p>
 
                                 <p>Software engineer specialized in Java and web application development. Eager to learn and apply new cutting edge technologies and methodologies, well organized, proactive, problem solving oriented and able to work under pressure. I enjoy working international environments and providing a good team spirit. Particularly interested in high availability web development, user interfaces, high performance applications and mobile applications</p>
                         </article>
@@ -54,7 +54,7 @@
                             <p>
                                 My blog, where I write down the day to day things that I'm sure I won't remember the next time I need them again
                             </p>
-                            <h2><a><i class="icon-chevron-right"></i><i class="icon-chevron-right"></i><i class="icon-chevron-right"></i><i class="icon-chevron-right"></i><i class="icon-chevron-right"></i></a></h2>
+                            <h2 id="logoLinks"><a><i class="icon-chevron-right"></i><i class="icon-chevron-right"></i><i class="icon-chevron-right"></i><i class="icon-chevron-right"></i><i class="icon-chevron-right"></i></a></h2>
                         </article>
                         <figure class="cbp-so-side cbp-so-side-right">
                             <h2>Blog</h2>
@@ -63,9 +63,16 @@
                     <section class="cbp-so-section" id="contact">
                         <figure class="cbp-so-side cbp-so-side-left">
                             <h2>Contact</h2>
+                            <div id="socialLinks">
+                                <ul>
+                                    <li><a href="http://twitter.com/j_a_salguero"><i id="twitter-sign" class="icon-twitter-sign icon-2x"></i>Twitter</a></li>
+                                    <li><a href="https://plus.google.com/u/0/109893214192956462820"><i id="google-sign"class="icon-google-plus-sign icon-2x"></i>Google+</a></li>
+                                    <li><a href="https://github.com/jasalguero"><i class="icon-github-sign icon-2x"></i>Github!</a></li>
+                                </ul>
+                            </div>
                         </figure>
                         <article class="cbp-so-side cbp-so-side-right">
-                            <p>Feel free to drop me a message below, or, if you prefer, contact me through the Twitter, Google+ and Github links at the bottom of the page.</p>
+                            <p>Feel free to drop me a message below, or, if you prefer, contact me through the Twitter, Google+ and Github links on the left.</p>
 
                             <form id="contactform">
 
@@ -79,10 +86,14 @@
                                 <textarea name="comment" id="contactComment" tabindex="4"></textarea>
 
                                 <div class="container_centered">
-                                    <div id="recaptcha"></div>
-                                    <button name="captcha" class="btn btn-animated centered" type="button" id="captchaSubmit" tabindex="5" autocapitalize="off" autocorrect="off" autocomplete="off">Are you human??</button>
+                                    <div id="captcha-container">
+                                        <div id="recaptcha"></div>
+                                        <div class="center">
+                                            <button name="captcha" class="btn btn-animated centered" type="button" id="captchaSubmit" tabindex="5" autocapitalize="off" autocorrect="off" autocomplete="off">Are you human??</button>
+                                        </div>
+                                    </div>
 
-                                    <button name="submit" class="btn" type="button" id="formSubmit" tabindex="5" disabled class="disabled" >Yes you are! Please click again to send the message</button>
+                                    <button name="submit" class="btn" type="button centered btn-animated" id="formSubmit" tabindex="5" disabled> Yes you are! Please click again to send the message</button>
                                 </div>
                             </form>
                         </article>
@@ -104,10 +115,11 @@
         <![endif]-->
 
         <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
+            var _gaq = [['_setAccount', 'UA-3549428-1'], ['_trackPageview'], ['_trackPageLoadTime']]; ( function(d, t) {
+                var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+                g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+                s.parentNode.insertBefore(g, s)
+            }(document, 'script'));
         </script>
 
 

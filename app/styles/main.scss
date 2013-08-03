@@ -43,12 +43,35 @@ h1,h2,h3 {
 
 a {
     text-decoration: none;
-    color: rgb(66, 131, 182);
+    //color: rgb(66, 131, 182);
+    color: rgb(4, 134, 136);
 }
 
+
+::selection {
+    background:#ff5400;
+    color:black;
+}
+
+::-moz-selection {
+    background:#ff5400;
+    color:black;
+}
+
+::-webkit-selection {
+    background:#ff5400;
+    color:black;
+}
+
+
+
 #content {
-    width: 85%;
+    width: 90%;
     margin: 0 auto;
+}
+
+#logoLinks {
+    margin-right: 1.6em;
 }
 
 #blog a:hover{
@@ -73,7 +96,8 @@ input[type="text"] {
     width: 400px; 
 }
 textarea { 
-    width: 750px; 
+    min-width: 500px;
+    max-width: 550px; 
     height: 275px; 
 }
 label { 
@@ -103,9 +127,9 @@ input:focus, textarea:focus {
     color: inherit;
     background: none;
     cursor: pointer;
-    padding: 25px 80px;
+    padding: 25px 60px;
     display: inline-block;
-    margin: 15px 30px;
+    //margin: 15px 30px;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;
@@ -116,6 +140,7 @@ input:focus, textarea:focus {
     transition: all 0.3s;
     border: 5px solid rgba(66, 131, 182, 0.15); 
     color: #ff5400;
+    max-width: 550px; 
 }
 
 .btn:after {
@@ -179,12 +204,84 @@ input:focus, textarea:focus {
      width:100%;
 }
 
-.centered{
-   margin:auto; 
+#recaptcha{
+    clear: both;
+    float: none;
 }
 
-#recaptcha{
-    float: left;
+#recaptcha img{
+    float: none;
+}
+
+.recaptchatable a{
+    color: grey !important;
+    font-size: 12px;
+}
+
+#formSubmit{
+    display: none;
+}
+
+/* Button 7h */
+#formSubmit {
+    overflow: hidden;
+}
+
+#formSubmit span {
+    display: inline-block;
+    width: 100%;
+}
+
+#formSubmit:before {
+    position: absolute;
+    left: 0;
+    width: 40%;
+    font-size: 160%;
+    line-height: 0.8;
+    color: #0a833d;
+}
+
+/********************************
+        SOCIAL LINKS
+*********************************/
+
+#socialLinks { 
+    float: left; 
+    margin-top: 30px; 
+}
+#socialLinks ul { 
+    margin-bottom: 150px; 
+}
+#socialLinks ul li { 
+    display: inline; 
+    margin-right: 30px; 
+}
+#socialLinks ul li a { 
+    font-size: 24px;
+    color:#ff5400 
+}
+#socialLinks ul li a:hover{ 
+    text-shadow: 2px 3px 8px #04283b;
+    filter: dropshadow(color=#04283b, offx=5, offy=5);
+}
+
+#socialLinks ul li img { 
+    vertical-align: bottom; 
+    position: relative; 
+    top: 2px; 
+}
+
+#socialLinks i{
+    color:rgb(4, 134, 136);
+    //text-shadow: 2px 2px 3px #04283b;
+    margin-right: 10px;
+
+    //text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+}
+#socialLinks i:hover{
+    //text-shadow: 4px 4px 2px #004D4E;
+    cursor: pointer;
+    
 }
 
 
@@ -233,6 +330,12 @@ input:focus, textarea:focus {
 .cbp-af-header h1,
 .cbp-af-header nav a {
     line-height: 230px;
+    margin-right: 1em;
+}
+
+.cbp-af-header nav a:hover {
+    //text-decoration: underline;
+    border-bottom: 4px solid;
 }
  
 .cbp-af-header h1 {
@@ -378,12 +481,16 @@ input:focus, textarea:focus {
 /* Sides */
 .cbp-so-side {
     //width: 50%;
-    width: 46%;
+    width: 52%;
     float: left;
     margin: 0;
     padding: 3em 2%;
     overflow: hidden;
     min-height: 12em;
+}
+
+.cbp-so-section figure {
+    width: 40%;
 }
  
 /* Clear floats of children */
